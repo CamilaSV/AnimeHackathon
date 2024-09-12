@@ -1,5 +1,3 @@
-
-
 const url = "https://cdn.animenewsnetwork.com/encyclopedia";
 
 async function getAnimeList() {
@@ -91,6 +89,28 @@ async function gatAnimeObject(animeXML) {
   return anime;
 }
 
+async function generateHTML(anime) {
+  const cardHTML = document.querySelector(".card")
+
+  const cardSection = document.createElement("section")
+  cardSection.classList.add("card__animelist");
+  
+  const cardRow = document.createElement("div")
+  cardRow.classList.add("card__row");
+
+  const cardImg = document.createElement("img")
+  cardImg.classList.add("card__image");
+  cardImg.src = anime.img;
+  cardSection.appendChild(cardImg);
+
+  const cardName = document.createElement("h2")
+  cardName.classList.add("card__name");
+  cardName.innerText = anime.name;
+  cardSection.appendChild(cardName);
+
+  cardHTML.appendChild(cardSection);
+}
+
 async function getEachAnime() {
   const idList = await getAnimeIds();
   const animeList = [];
@@ -99,6 +119,8 @@ async function getEachAnime() {
     setTimeout(async () => {
       const anime = await getAnimeById(id);
       animeList.push(await gatAnimeObject(anime));
+      generateHTML(await gatAnimeObject(anime));
+      
     }, 1000);
   });
 
