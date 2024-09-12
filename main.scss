@@ -9,11 +9,17 @@
 html {
     box-sizing: inherit;
     margin: 0;
+    
 }
 
 body, h1, h2 {
     margin: 0;
     padding: 0;
+ }
+
+ body {
+    background-color: $suggestions-bg-color;
+
  }
 
 .header {
@@ -22,7 +28,7 @@ body, h1, h2 {
         color: #ffffff;
         text-align: center;
         padding-top: 2rem;
-        
+        font-family: "itim";
     }
 }
 
@@ -52,11 +58,28 @@ body, h1, h2 {
     }
 }
 
-.animelist {
-    background-color: $suggestions-bg-color;
-}
-
 .card {
-    padding: 2rem;
+    background-color: $suggestions-bg-color;
+    display: flex;
+    gap: 1rem;
+    padding:2rem 1rem;
+
+    &__animelist {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1rem;
+        border-radius: 1rem;
+        background-color: #fff;
+        height: 40vh;
+        width: 55%;
+    }   
+
+    &__image {
+        height: 75%;
+    }
+
+    &__name {
+        font-size: 1rem;
+    }
 }
 

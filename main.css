@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "itim", "sans-serif";
+  src: url("Itim-Regular.otf") format("opentype");
+  font-weight: 400;
+}
 *,
 *::after,
 *::before {
@@ -14,11 +19,16 @@ body, h1, h2 {
   padding: 0;
 }
 
+body {
+  background-color: #C7521B;
+}
+
 .header__title {
   background-color: #10272C;
   color: #ffffff;
   text-align: center;
   padding-top: 2rem;
+  font-family: "itim";
 }
 
 .form {
@@ -45,10 +55,24 @@ body, h1, h2 {
   color: #000;
 }
 
-.animelist {
-  background-color: #C7521B;
-}
-
 .card {
-  padding: 2rem;
+  background-color: #C7521B;
+  display: flex;
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+.card__animelist {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  height: 40vh;
+  width: 55%;
+}
+.card__image {
+  height: 75%;
+}
+.card__name {
+  font-size: 1rem;
 }/*# sourceMappingURL=main.css.map */
