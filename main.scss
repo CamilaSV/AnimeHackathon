@@ -1,0 +1,29 @@
+@use "./partials/variables" as *;
+
+*, 
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+body, h1, h2 {
+    margin: 0;
+    padding: 0;
+ }
+
+.header {
+    &__title {
+        background-color: $header-bg-color;
+        color: #ffffff;
+        text-align: center;
+    }
+}
+
+.form {
+    background-color: $header-bg-color;
+}
